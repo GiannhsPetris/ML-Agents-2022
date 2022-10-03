@@ -1,0 +1,65 @@
+{
+    "Ergasia": {
+        "checkpoints": [
+            {
+                "steps": 39968,
+                "file_path": "results\\final2\\Ergasia\\Ergasia-39968.onnx",
+                "reward": -22.900000434030186,
+                "creation_time": 1663603352.668342,
+                "auxillary_file_paths": [
+                    "results\\final2\\Ergasia\\Ergasia-39968.pt"
+                ]
+            },
+            {
+                "steps": 49984,
+                "file_path": "results\\final2\\Ergasia\\Ergasia-49984.onnx",
+                "reward": -23.709091221744362,
+                "creation_time": 1663603419.2052104,
+                "auxillary_file_paths": [
+                    "results\\final2\\Ergasia\\Ergasia-49984.pt"
+                ]
+            },
+            {
+                "steps": 59968,
+                "file_path": "results\\final2\\Ergasia\\Ergasia-59968.onnx",
+                "reward": -20.740000469982625,
+                "creation_time": 1663603486.9061158,
+                "auxillary_file_paths": [
+                    "results\\final2\\Ergasia\\Ergasia-59968.pt"
+                ]
+            },
+            {
+                "steps": 69984,
+                "file_path": "results\\final2\\Ergasia\\Ergasia-69984.onnx",
+                "reward": -17.86000044643879,
+                "creation_time": 1663603553.681239,
+                "auxillary_file_paths": [
+                    "results\\final2\\Ergasia\\Ergasia-69984.pt"
+                ]
+            },
+            {
+                "steps": 73120,
+                "file_path": "results\\final2\\Ergasia\\Ergasia-73120.onnx",
+                "reward": -20.950000375509262,
+                "creation_time": 1663603583.6444783,
+                "auxillary_file_paths": [
+                    "results\\final2\\Ergasia\\Ergasia-73120.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 73120,
+            "file_path": "results\\final2\\Ergasia.onnx",
+            "reward": -20.950000375509262,
+            "creation_time": 1663603583.6444783,
+            "auxillary_file_paths": [
+                "results\\final2\\Ergasia\\Ergasia-73120.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.12.0+cpu"
+    }
+}

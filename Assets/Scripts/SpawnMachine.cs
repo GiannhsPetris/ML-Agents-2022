@@ -8,38 +8,26 @@ public class SpawnMachine : MonoBehaviour
     [Header("Lists")]
 
     [SerializeField] private List<GameObject> enemyTypeList = new List<GameObject>(){};
-    [SerializeField] private List<Transform> goalList = new List<Transform>(){};
-    [SerializeField] private List<Transform> spawnPointList = new List<Transform>(){};
 
     [Header("Stats")]
 
     public int currentAlive;
     [SerializeField] private int currentMax = 5;
     [SerializeField] private int leftToSpawn;
-    [SerializeField] private float timeToSpawn;
-    [SerializeField] private float currentTime = 0;
+    
 
     Enemy enemy;
 
 
-
-    // Update is called once per frame
-    void Update()
+    public void checkSpawn(List<Transform> goalList, List<Transform> spawnPointList)
     {
-        if (currentTime > 0) {
-            currentTime -= Time.deltaTime;
-        }else{
-            checkSpawn();
-            currentTime = timeToSpawn;
-        }
-    }
-
-    void checkSpawn(){
         leftToSpawn = currentMax - currentAlive;
-        if (leftToSpawn > 0) StartCoroutine( Spawn(leftToSpawn) ) ;
+        if (leftToSpawn > 0) StartCoroutine( Spawn(leftToSpawn, goalList, spawnPointList )) ;
+        
     }
 
-    private IEnumerator Spawn(int times){
+    private IEnumerator Spawn(int times, List<Transform> goalList, List<Transform> spawnPointList)
+    {
 
         WaitForSeconds wait = new WaitForSeconds( 3.5f ) ;
 
@@ -48,7 +36,7 @@ public class SpawnMachine : MonoBehaviour
             int spawnIndex = Random.Range(0, spawnPointList.Count);
 
             GameObject clone = GameObject.Instantiate(enemyTypeList[enemyIndex], spawnPointList[spawnIndex]);
-            clone.GetComponent<Transform>().localPosition = new Vector3(0,0,0);
+
             enemy = clone.GetComponent<Enemy>();
             enemy.setGoal(goalList[spawnIndex]);
             currentAlive ++;
@@ -57,7 +45,8 @@ public class SpawnMachine : MonoBehaviour
         }
     }
 
-    public void deathOccured(){
+    public void deathOccured()
+    {
         currentAlive --;
     }
 }

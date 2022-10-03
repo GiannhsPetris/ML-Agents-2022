@@ -1,0 +1,56 @@
+{
+    "Ergasia": {
+        "checkpoints": [
+            {
+                "steps": 9947,
+                "file_path": "results\\sept1\\Ergasia\\Ergasia-9947.onnx",
+                "reward": -25.250000558793545,
+                "creation_time": 1664382827.725829,
+                "auxillary_file_paths": [
+                    "results\\sept1\\Ergasia\\Ergasia-9947.pt"
+                ]
+            },
+            {
+                "steps": 19984,
+                "file_path": "results\\sept1\\Ergasia\\Ergasia-19984.onnx",
+                "reward": -12.822222299045986,
+                "creation_time": 1664382955.9529772,
+                "auxillary_file_paths": [
+                    "results\\sept1\\Ergasia\\Ergasia-19984.pt"
+                ]
+            },
+            {
+                "steps": 29975,
+                "file_path": "results\\sept1\\Ergasia\\Ergasia-29975.onnx",
+                "reward": -13.562500162050128,
+                "creation_time": 1664383084.0652702,
+                "auxillary_file_paths": [
+                    "results\\sept1\\Ergasia\\Ergasia-29975.pt"
+                ]
+            },
+            {
+                "steps": 39648,
+                "file_path": "results\\sept1\\Ergasia\\Ergasia-39648.onnx",
+                "reward": -58.55555620706744,
+                "creation_time": 1664383284.3665056,
+                "auxillary_file_paths": [
+                    "results\\sept1\\Ergasia\\Ergasia-39648.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 39648,
+            "file_path": "results\\sept1\\Ergasia.onnx",
+            "reward": -58.55555620706744,
+            "creation_time": 1664383284.3665056,
+            "auxillary_file_paths": [
+                "results\\sept1\\Ergasia\\Ergasia-39648.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.12.0+cpu"
+    }
+}

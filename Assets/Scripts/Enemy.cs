@@ -50,7 +50,8 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void setGoal(Transform goTo){
+    public void setGoal(Transform goTo)
+    {
         goal = goTo;
     }
 
@@ -73,8 +74,9 @@ public class Enemy : MonoBehaviour
         GetComponent<Enemy>().enabled = false;
         Destroy(GetComponent<Collider>());
         this.enabled = false;
-        Destroy(gameObject, 8f);
+        Destroy(gameObject, 2f);
         spawn.deathOccured();
+       
     }
 
 }

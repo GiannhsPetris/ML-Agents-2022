@@ -4,11 +4,11 @@ using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
-
-
+using UnityEngine.UI;
 
 public class AgentAI : Agent
 {
+    [SerializeField] GameObject spawn;
     SpawnMachine spawnMachine;
 
     [Header("Stats")]
@@ -24,6 +24,11 @@ public class AgentAI : Agent
     [SerializeField] private int currentMana;
     [SerializeField] private int killCounter;
     [SerializeField] private int killMax;
+    [SerializeField] private float timeToSpawn = 15;
+    [SerializeField] private float currentTime = 0;
+
+    [SerializeField] private List<Transform> goalList = new List<Transform>() { };
+    [SerializeField] private List<Transform> spawnPointList = new List<Transform>() { };
 
 
     [Header("GameObjects Through Inspector")]
@@ -34,33 +39,70 @@ public class AgentAI : Agent
     [SerializeField] private Rigidbody rb;
     [SerializeField] private GameObject bullet;
 
+
+    [Header("UI")]
+    [SerializeField] Text runs;
+    [SerializeField] Text kills;
+    [SerializeField] Text healthUi;
+    [SerializeField] Text wins;
+    [SerializeField] Text loses;
+
+
     private Animator animator;
     private AudioSource audioSource;
     private bool lockG;
 
+    int loseCounter = 0;
+    int winCounter = 0;
+    int runCounter = 0;
+    float total = 0;
+    float totalwall = 0;
 
-    public override void OnEpisodeBegin(){
+    
+
+
+
+
+    public override void OnEpisodeBegin()
+    {
+        healthUi.text = health.ToString();
+        kills.text = "0 / " + killMax.ToString();
+        total = 0;
+
         lockG = true;
         particles.SetActive(false);
-        health = 200;
         currentHealth = health;
         currentMana = manaSize;
         killCounter = 0;
-        Debug.Log("new episode");
-        forceField.SetActive(true);
-        spawnMachine = GameObject.FindGameObjectWithTag("Spawn").GetComponent<SpawnMachine>();
+        //Debug.Log("new episode");
 
     }
 
-    public void Update(){
+    //call check spawn and update times
+    public void FixedUpdate()
+    {
         fireElapsedTime += Time.deltaTime;
         manaElapsedTime += Time.deltaTime;
+
+        if (currentTime > 0)
+        {
+            currentTime -= Time.deltaTime;
+        }
+        else
+        {
+            spawnMachine.checkSpawn(goalList, spawnPointList);
+            currentTime = timeToSpawn;
+        }
     }
 
-    public void Start(){
+
+    public void Start()
+    {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        spawnMachine = spawn.GetComponent<SpawnMachine>();
     }
+
 
     public override void CollectObservations(VectorSensor sensor)
     {
@@ -71,7 +113,6 @@ public class AgentAI : Agent
         sensor.AddObservation(goal1.position);
         sensor.AddObservation(goal2.position);
         sensor.AddObservation(goal3.position);
-
     }
 
     
@@ -93,6 +134,7 @@ public class AgentAI : Agent
     }
 
 
+    // AI actions
     public override void OnActionReceived(ActionBuffers actions)
     {
         int moveX = actions.DiscreteActions[0];
@@ -143,65 +185,91 @@ public class AgentAI : Agent
          }
     }
 
+
     public void getMana(){
-        if (manaElapsedTime >= manaDelay){
+        if (manaElapsedTime >= manaDelay)
+        {
             manaElapsedTime = 0;
             currentMana = manaSize;
-            Debug.Log("mana");
             animator.Play("mana");
         }
         
     }
 
 
-    public void lockGun(){
+    public void lockGun()
+    {
         lockG = false;
         //Debug.Log("lock");
         particles.SetActive(true);
     }
 
-    public void unlockGun(){
+    public void unlockGun()
+    {
         lockG = true;
         //Debug.Log("unlock");
         particles.SetActive(false);
     }
 
 
-    public void insideBase(int dmg){
+    public void insideBase(int dmg)
+    {
         currentHealth = currentHealth - dmg;
-        if (currentHealth <= 0) {
-            Debug.Log("lose");
-            forceField.SetActive(false);
-            rewardSystem(-2f);
+        healthUi.text = currentHealth.ToString();
+
+        rewardSystem(-0.5f);
+        if (currentHealth <= 0) 
+        {
+            loseCounter ++;
+            loses.text = loseCounter.ToString();
+
+            runCounter++;
+            runs.text = runCounter.ToString();
+
+            SetReward(-2f);
             EndEpisode();
-            OnEpisodeBegin();
         }
         
-        Debug.Log("dmg");
-        rewardSystem(-0.5f);
+        
     }
 
-    public void enemyKilled(){
+    public void enemyKilled()
+    {
         killCounter ++;
+        kills.text = killCounter.ToString() + " / " + killMax.ToString();
+
+        rewardSystem(0.5f);
         if (killCounter >= killMax) {
-            rewardSystem(2f);
-            Debug.Log("win");
+            runCounter++;
+            runs.text = runCounter.ToString();
+
+            winCounter ++;
+            wins.text = winCounter.ToString();
+
+            SetReward(2f);
             EndEpisode();
-            OnEpisodeBegin();
         }
-        rewardSystem(1f);
-        Debug.Log("kill");
     }
 
 
-    public void rewardSystem(float amount){
+    public void rewardSystem(float amount)
+    {
         AddReward(amount);
     }
 
-    void OnCollisionEnter(Collision collision){
-        if (collision.gameObject.tag == "wall") rewardSystem(-0.1f);
-    }
+    void OnCollisionEnter(Collision collision)
+    {
+        //move agent if he touches the wall
 
+        if (collision.gameObject.tag == "wallRight") 
+        {
+            gameObject.transform.position += new Vector3(-0.1f,0,0);
+        }
 
+        if (collision.gameObject.tag == "wallLeft")
+        {
+            gameObject.transform.position += new Vector3(0.1f, 0, 0);
+        }
+    }   
 
 }

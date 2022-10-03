@@ -1,0 +1,29 @@
+{
+    "Ergasia": {
+        "checkpoints": [
+            {
+                "steps": 1184,
+                "file_path": "results\\finaltest1\\Ergasia\\Ergasia-1184.onnx",
+                "reward": -43.70000171661377,
+                "creation_time": 1663600882.7858644,
+                "auxillary_file_paths": [
+                    "results\\finaltest1\\Ergasia\\Ergasia-1184.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1184,
+            "file_path": "results\\finaltest1\\Ergasia.onnx",
+            "reward": -43.70000171661377,
+            "creation_time": 1663600882.7858644,
+            "auxillary_file_paths": [
+                "results\\finaltest1\\Ergasia\\Ergasia-1184.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.12.0+cpu"
+    }
+}

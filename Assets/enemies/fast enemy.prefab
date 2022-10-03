@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 4641079726817869372}
   m_Layer: 0
   m_Name: fast enemy
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -398,13 +398,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navAgent: {fileID: 4169880717923593812}
-  animator: {fileID: 7580381445203504085}
-  maxHealth: 100
   goal: {fileID: 0}
+  maxHealth: 100
   damageBase: 10
   speed: 0
   blood: {fileID: 2994863687964872203}
   electricity: {fileID: 3410944720767054820, guid: b4d51211d51d0254e98798b1faa6404c, type: 3}
+  animator: {fileID: 7580381445203504085}
 --- !u!1 &7521224480143609669
 GameObject:
   m_ObjectHideFlags: 0

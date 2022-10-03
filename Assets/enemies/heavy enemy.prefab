@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1700711912280143851}
   m_Layer: 0
   m_Name: heavy enemy
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,13 +100,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navAgent: {fileID: 6459936297864686156}
-  animator: {fileID: 5926043855412152174}
-  maxHealth: 150
   goal: {fileID: 0}
+  maxHealth: 150
   damageBase: 15
   speed: 0
   blood: {fileID: 6409578343480892484}
   electricity: {fileID: 4478322956655935998}
+  animator: {fileID: 5926043855412152174}
 --- !u!136 &1700711912280143851
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -1,0 +1,47 @@
+{
+    "Ergasia": {
+        "checkpoints": [
+            {
+                "steps": 9984,
+                "file_path": "results\\final6\\Ergasia\\Ergasia-9984.onnx",
+                "reward": -85.2500015385449,
+                "creation_time": 1663613920.5539765,
+                "auxillary_file_paths": [
+                    "results\\final6\\Ergasia\\Ergasia-9984.pt"
+                ]
+            },
+            {
+                "steps": 19984,
+                "file_path": "results\\final6\\Ergasia\\Ergasia-19984.onnx",
+                "reward": -95.27500202693045,
+                "creation_time": 1663614052.6785743,
+                "auxillary_file_paths": [
+                    "results\\final6\\Ergasia\\Ergasia-19984.pt"
+                ]
+            },
+            {
+                "steps": 24000,
+                "file_path": "results\\final6\\Ergasia\\Ergasia-24000.onnx",
+                "reward": -92.15000263601542,
+                "creation_time": 1663614107.6378086,
+                "auxillary_file_paths": [
+                    "results\\final6\\Ergasia\\Ergasia-24000.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 24000,
+            "file_path": "results\\final6\\Ergasia.onnx",
+            "reward": -92.15000263601542,
+            "creation_time": 1663614107.6378086,
+            "auxillary_file_paths": [
+                "results\\final6\\Ergasia\\Ergasia-24000.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.12.0+cpu"
+    }
+}

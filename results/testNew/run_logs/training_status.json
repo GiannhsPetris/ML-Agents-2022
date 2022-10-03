@@ -1,0 +1,38 @@
+{
+    "Ergasia": {
+        "checkpoints": [
+            {
+                "steps": 2277,
+                "file_path": "results\\testNew\\Ergasia\\Ergasia-2277.onnx",
+                "reward": -2.0,
+                "creation_time": 1664653704.3110757,
+                "auxillary_file_paths": [
+                    "results\\testNew\\Ergasia\\Ergasia-2277.pt"
+                ]
+            },
+            {
+                "steps": 8678,
+                "file_path": "results\\testNew\\Ergasia\\Ergasia-8678.onnx",
+                "reward": -2.0,
+                "creation_time": 1664653801.8877234,
+                "auxillary_file_paths": [
+                    "results\\testNew\\Ergasia\\Ergasia-8678.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 8678,
+            "file_path": "results\\testNew\\Ergasia.onnx",
+            "reward": -2.0,
+            "creation_time": 1664653801.8877234,
+            "auxillary_file_paths": [
+                "results\\testNew\\Ergasia\\Ergasia-8678.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.12.0+cpu"
+    }
+}

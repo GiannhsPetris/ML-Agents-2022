@@ -1,0 +1,65 @@
+{
+    "Ergasia": {
+        "checkpoints": [
+            {
+                "steps": 659434,
+                "file_path": "results\\mapa1\\Ergasia\\Ergasia-659434.onnx",
+                "reward": 2.5,
+                "creation_time": 1664643516.189547,
+                "auxillary_file_paths": [
+                    "results\\mapa1\\Ergasia\\Ergasia-659434.pt"
+                ]
+            },
+            {
+                "steps": 669534,
+                "file_path": "results\\mapa1\\Ergasia\\Ergasia-669534.onnx",
+                "reward": null,
+                "creation_time": 1664643591.385414,
+                "auxillary_file_paths": [
+                    "results\\mapa1\\Ergasia\\Ergasia-669534.pt"
+                ]
+            },
+            {
+                "steps": 679926,
+                "file_path": "results\\mapa1\\Ergasia\\Ergasia-679926.onnx",
+                "reward": -3.3333333333333335,
+                "creation_time": 1664643645.9074402,
+                "auxillary_file_paths": [
+                    "results\\mapa1\\Ergasia\\Ergasia-679926.pt"
+                ]
+            },
+            {
+                "steps": 689851,
+                "file_path": "results\\mapa1\\Ergasia\\Ergasia-689851.onnx",
+                "reward": -2.75,
+                "creation_time": 1664643707.423098,
+                "auxillary_file_paths": [
+                    "results\\mapa1\\Ergasia\\Ergasia-689851.pt"
+                ]
+            },
+            {
+                "steps": 690851,
+                "file_path": "results\\mapa1\\Ergasia\\Ergasia-690851.onnx",
+                "reward": null,
+                "creation_time": 1664643723.3110623,
+                "auxillary_file_paths": [
+                    "results\\mapa1\\Ergasia\\Ergasia-690851.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 690851,
+            "file_path": "results\\mapa1\\Ergasia.onnx",
+            "reward": null,
+            "creation_time": 1664643723.3110623,
+            "auxillary_file_paths": [
+                "results\\mapa1\\Ergasia\\Ergasia-690851.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.12.0+cpu"
+    }
+}

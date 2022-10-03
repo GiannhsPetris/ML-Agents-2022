@@ -96,7 +96,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.67
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1085056790446640235
 Rigidbody:
@@ -128,7 +128,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1809022330002312, guid: ed511b7776af6174e9b1255c7a81e59c, type: 3}
   damage: 50
-  player: {fileID: 0}
 --- !u!1001 &3162484867540067611
 PrefabInstance:
   m_ObjectHideFlags: 0

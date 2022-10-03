@@ -26,11 +26,17 @@ public class Fireball : MonoBehaviour
         if (collision.gameObject.tag != "Player")
         {
             //if (collision.gameObject.tag == "floor") player.rewardSystem(-0.1f);
+            //print(collision.gameObject.name);
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             if (enemy != null) enemy.TakeDamage(damage);
 
             if (collision.gameObject.tag == "enemy"){
                 Debug.Log("hit");
+            }
+
+            if (collision.gameObject.tag == "wall")
+            {
+                return;
             }
             
             //cloning explotion
